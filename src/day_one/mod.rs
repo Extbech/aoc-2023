@@ -3,7 +3,7 @@ use std::fs::File;
 use std::io::prelude::*;
 use std::io::{BufReader, Error};
 
-fn get_calibrated_value_sum(file_path: &String) -> Result<Vec<i32>, Error> {
+pub fn get_calibrated_value_sum(file_path: &String) -> Result<Vec<i32>, Error> {
     let mut sum: Vec<i32> = Vec::new();
     let file = File::open(file_path)?;
     let reader = BufReader::new(file);
@@ -32,7 +32,7 @@ fn get_calibrated_value_sum(file_path: &String) -> Result<Vec<i32>, Error> {
     Ok(sum)
 }
 
-fn get_calibrated_value_sum_part_two(file_path: &String) -> Result<Vec<i32>, Error> {
+pub fn get_calibrated_value_sum_part_two(file_path: &String) -> Result<Vec<i32>, Error> {
     let mut sum: Vec<i32> = Vec::new();
     let file = File::open(file_path)?;
     let reader = BufReader::new(file);
@@ -130,4 +130,40 @@ fn is_not_digit_before(index: &usize, data: &str) -> bool {
 fn is_not_digit_after(index: &usize, data: &str) -> bool {
     let chars: Vec<char> = data.chars().collect();
     !chars.iter().skip(*index).any(|c| c.is_ascii_digit())
+}
+
+#[test]
+fn test_get_calibrated_value_sum() {
+    let file_path = String::from("data/day-1.txt");
+    let result = get_calibrated_value_sum(&file_path);
+
+    let res = result.unwrap();
+
+    assert_eq!(res[0], 55);
+
+    assert_eq!(res[res.len() - 1], 55);
+
+    assert_eq!(res[6], 88);
+
+    assert_eq!(res.len(), 1000);
+}
+
+#[test]
+fn test_get_calibrated_value_sum_part_two() {
+    let file_path = String::from("data/day-1.txt");
+    let result = get_calibrated_value_sum_part_two(&file_path);
+
+    let res = result.unwrap();
+
+    assert_eq!(res[0], 55);
+
+    assert_eq!(res[4], 27);
+
+    assert_eq!(res[16], 88);
+
+    assert_eq!(res[432], 98);
+
+    assert_eq!(res[289], 42);
+
+    assert_eq!(res.len(), 1000);
 }
