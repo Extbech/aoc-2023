@@ -7,10 +7,10 @@ fn test_get_calibrated_value_sum() {
 
     assert!(result.is_ok());
     let res = result.unwrap();
-    
+
     assert_eq!(res[0], 55);
 
-    assert_eq!(res[res.len()-1], 55);
+    assert_eq!(res[res.len() - 1], 55);
 
     assert_eq!(res[6], 88);
 
@@ -24,7 +24,7 @@ fn test_get_calibrated_value_sum_part_two() {
 
     assert!(result.is_ok());
     let res = result.unwrap();
-    
+
     assert_eq!(res[0], 55);
 
     assert_eq!(res[4], 27);
