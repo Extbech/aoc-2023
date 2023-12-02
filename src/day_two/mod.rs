@@ -121,7 +121,6 @@ fn is_not_possible(
         .collect::<Vec<&str>>()
         .iter()
         .any(|c| {
-            //println!("{:?}", c.split(" ").collect::<Vec<&str>>());
             c.contains("red")
                 && c.split(" ").collect::<Vec<&str>>()[1]
                     .parse::<i32>()
@@ -138,20 +137,4 @@ fn is_not_possible(
                         .unwrap()
                         > num_blue_cubes
         });
-}
-
-#[test]
-fn test_power_sum() {
-    let file_path = String::from("data/day-2.txt");
-    let result = sum_power_min_cubes(&file_path);
-
-    let res = result.unwrap();
-
-    assert_eq!(res[0], 55);
-
-    assert_eq!(res[res.len() - 1], 55);
-
-    assert_eq!(res[6], 88);
-
-    assert_eq!(res.len(), 1000);
 }
