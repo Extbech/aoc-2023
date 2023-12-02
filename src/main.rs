@@ -25,5 +25,5 @@ fn main() {
     let game_sum = sum_possible_games(12, 13, 14, &file_path_day_2).expect("error reading file");
     println!("\nDay 2 Task 1 Result:\t{}", game_sum);
     let power_sum = sum_power_min_cubes(&file_path_day_2).expect("error reading file");
-    println!("\nDay 2 Task 1 Result:\t{}", power_sum);
+    println!("Day 2 Task 1 Result:\t{}", power_sum);
 }

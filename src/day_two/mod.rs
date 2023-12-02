@@ -96,7 +96,6 @@ pub fn sum_power_min_cubes(file_path: &str) -> Result<i32, Error> {
             })
         }
         let mut power: u32 = 0;
-        println!("{:?}", min_cubes);
         min_cubes.values().for_each(|val| {
             if power == 0 {
                 power = *val;
