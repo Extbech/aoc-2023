@@ -68,8 +68,8 @@ fn gear_sum_row(arr: &Vec<&str>, index: usize) -> i32 {
                     let (is_num, num) =
                         search_for_numbers_n_row(&char_arr, &prev_char_arr, &next_char_arr, j);
                     if is_num {
-                        println!("row: {}\tsum: {}", i + 1, num);
-                        println!("-----------------------------------------");
+                        //println!("row: {}\tsum: {}", i + 1, num);
+                        //println!("-----------------------------------------");
                         sum += num;
                     }
                 }
@@ -516,7 +516,7 @@ fn search_for_numbers_n_row(
         }
     }
     if first && second {
-        println!("first num: {}\tsecond num: {}", first_num, second_num);
+        //println!("first num: {}\tsecond num: {}", first_num, second_num);
         (true, first_num * second_num)
     } else {
         (false, 0)
