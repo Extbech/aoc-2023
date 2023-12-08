@@ -31,29 +31,29 @@ fn main() {
     let file_path_day_7: String = String::from("data/day-7.txt");
 
     // Day 1
-    println!("----------------------------------------------");
+    println!("-----------------------------------");
     let cailbrated_result_sum =
         get_calibrated_value_sum(&file_path_day_1).expect("error reading file!");
     println!(
-        "Day 1 Task 1 Result:\t {}",
+        "Day 1 Task 1 Result:\t{}",
         cailbrated_result_sum.iter().sum::<i32>()
     );
     let cailbrated_result_sum_part_two =
         get_calibrated_value_sum_part_two(&file_path_day_1).expect("error reading file!");
     println!(
-        "Day 1 Task 2 Result:\t {:?}",
+        "Day 1 Task 2 Result:\t{:?}",
         cailbrated_result_sum_part_two.iter().sum::<i32>()
     );
 
     // Day 2
-    println!("----------------------------------------------");
+    println!("-----------------------------------");
     let game_sum = sum_possible_games(12, 13, 14, &file_path_day_2).expect("error reading file");
     println!("Day 2 Task 1 Result:\t{}", game_sum);
     let power_sum = sum_power_min_cubes(&file_path_day_2).expect("error reading file");
     println!("Day 2 Task 1 Result:\t{}", power_sum);
 
     // Day 3
-    println!("----------------------------------------------");
+    println!("-----------------------------------");
     match sum_engine_parts(&file_path_day_3, false) {
         Either::Left(val) => println!("Day 3 Task 1 Result:\t{}", val.unwrap()),
         Either::Right(_) => println!("failed"),
@@ -62,23 +62,25 @@ fn main() {
     println!("Day 3 Task 2 Result:\t{}", gear_sum);
 
     // Day 4
+    println!("-----------------------------------");
     let day_4_val = get_winning_number_sum(&file_path_day_4).expect("error reading file");
-    println!("\nDay 4 Task 1 Result:\t{}", day_4_val);
+    println!("Day 4 Task 1 Result:\t{}", day_4_val);
     let day_4_val_task_2 = find_num_scratchcards(&file_path_day_4).expect("error reading file");
     println!("Day 4 Task 2 Result:\t{}", day_4_val_task_2);
 
     // Day 5
+    println!("-----------------------------------");
     let day_5_val = day_five_task_1(&file_path_day_5).expect("error reading file");
-    println!("\nDay 5 Task 1 Result:\t{}", day_5_val);
+    println!("Day 5 Task 1 Result:\t{}", day_5_val);
     // Day 6
-    println!("----------------------------------------------");
+    println!("-----------------------------------");
     let day_six_one = day_six_task_one(&file_path_day_6).expect("error reading file");
     println!("Day 6 Task 1 Result:\t{}", day_six_one);
     let day_six_two = day_six_task_two(&file_path_day_6).expect("error reading file");
     println!("Day 6 Task 2 Result:\t{}", day_six_two);
 
     // Day 7
-    println!("----------------------------------------------");
+    println!("-----------------------------------");
     let day_six_one = day_seven_task_one(&file_path_day_7).expect("error reading file");
     println!("Day 7 Task 1 Result:\t{}", day_six_one);
     let day_six_two = day_seven_task_two(&file_path_day_7).expect("error reading file");
