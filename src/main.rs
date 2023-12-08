@@ -1,6 +1,11 @@
+mod day_five;
+mod day_four;
 mod day_one;
 mod day_three;
 mod day_two;
+use crate::day_five::day_five_task_1;
+use crate::day_four::find_num_scratchcards;
+use crate::day_four::get_winning_number_sum;
 use crate::day_one::get_calibrated_value_sum;
 use crate::day_one::get_calibrated_value_sum_part_two;
 use crate::day_three::sum_engine_parts;
@@ -13,6 +18,8 @@ fn main() {
     let file_path_day_1: String = String::from("data/day-1.txt");
     let file_path_day_2: String = String::from("data/day-2.txt");
     let file_path_day_3: String = String::from("data/day-3.txt");
+    let file_path_day_4: String = String::from("data/day-4.txt");
+    let file_path_day_5: String = String::from("data/day-5.txt");
 
     // Day 1
     let cailbrated_result_sum =
@@ -40,5 +47,15 @@ fn main() {
         Either::Right(_) => println!("failed"),
     };
     let gear_sum = sum_gear_parts(&file_path_day_3).expect("error reading file");
-    println!("Day 2 Task 2 Result:\t{}", gear_sum);
+    println!("Day 3 Task 2 Result:\t{}", gear_sum);
+
+    // Day 4
+    let day_4_val = get_winning_number_sum(&file_path_day_4).expect("error reading file");
+    println!("\nDay 4 Task 1 Result:\t{}", day_4_val);
+    let day_4_val_task_2 = find_num_scratchcards(&file_path_day_4).expect("error reading file");
+    println!("Day 4 Task 2 Result:\t{}", day_4_val_task_2);
+
+    // Day 5
+    let day_5_val = day_five_task_1(&file_path_day_5).expect("error reading file");
+    println!("\nDay 5 Task 1 Result:\t{}", day_5_val);
 }
