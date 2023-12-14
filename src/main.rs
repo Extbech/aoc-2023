@@ -3,6 +3,7 @@ mod day_four;
 mod day_one;
 mod day_three;
 mod day_two;
+mod day_eight;
 use crate::day_five::day_five_task_1;
 use crate::day_four::find_num_scratchcards;
 use crate::day_four::get_winning_number_sum;
@@ -19,6 +20,7 @@ use crate::day_three::sum_gear_parts;
 use crate::day_three::Either;
 use crate::day_two::sum_possible_games;
 use crate::day_two::sum_power_min_cubes;
+use crate::day_eight::day_eight_task_one;
 
 fn main() {
     // <----- FILE PATHS ----->
@@ -29,6 +31,8 @@ fn main() {
     let file_path_day_5: String = String::from("data/day-5.txt");
     let file_path_day_6: String = String::from("data/day-6.txt");
     let file_path_day_7: String = String::from("data/day-7.txt");
+    let file_path_day_8: String = String::from("data/day-8.txt");
+    let file_path_day_8_2: String = String::from("data/data-8-test.txt");
 
     // Day 1
     println!("-----------------------------------");
@@ -81,8 +85,15 @@ fn main() {
 
     // Day 7
     println!("-----------------------------------");
-    let day_six_one = day_seven_task_one(&file_path_day_7).expect("error reading file");
-    println!("Day 7 Task 1 Result:\t{}", day_six_one);
-    let day_six_two = day_seven_task_two(&file_path_day_7).expect("error reading file");
-    println!("Day 7 Task 2 Result:\t{}", day_six_two);
+    let day_seven_one = day_seven_task_one(&file_path_day_7).expect("error reading file");
+    println!("Day 7 Task 1 Result:\t{}", day_seven_one);
+    let day_seven_two = day_seven_task_two(&file_path_day_7).expect("error reading file");
+    println!("Day 7 Task 2 Result:\t{}", day_seven_two);
+
+    // Day 8
+    println!("-----------------------------------");
+    let day_eight_one = day_eight_task_one(&file_path_day_8).expect("error reading file");
+    println!("Day 8 Task 1 Result:\t{}", day_eight_one);
+    //let day_eight_two = day_seven_task_two(&file_path_day_7).expect("error reading file");
+    //println!("Day 7 Task 2 Result:\t{}", day_six_two);
 }
